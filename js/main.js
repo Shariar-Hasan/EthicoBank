@@ -36,7 +36,7 @@ getDeposit.addEventListener("click", function(){
 getWithdraw.addEventListener("click", function(){
     const getAmount = document.getElementById("withdrawAmount");
     let Value = getValue(getAmount);
-    if(!isNaN(Value) && Value >= 0)
+    if(!isNaN(Value) && Value >= 0  && parseFloat(document.getElementById("balance").innerText) >= Value)
     {
         updateAmount("withdraw",Value);
         updateAmount("balance",-1*Value);
